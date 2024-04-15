@@ -9,7 +9,6 @@ var minimumBoxes = function (apple, capacity) {
     capacity.sort((a, b) => b - a);
     for (let i = 0; i < capacity.length; i++) {
         totalApples = totalApples - capacity[i]
-        console.log(totalApples)
         if (totalApples <= 0) return i + 1
     }
 
