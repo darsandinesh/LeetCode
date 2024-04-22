@@ -4,9 +4,8 @@
  */
 var firstUniqChar = function (s) {
 
-    let arr = s.split('')
-    for (let i = 0; i < arr.length; i++) {
-        if (arr.indexOf(arr[i]) == arr.lastIndexOf(arr[i])) return i
+    for (let i = 0; i < s.length; i++) {
+        if (s.indexOf(s[i]) == s.lastIndexOf(s[i])) return i
     }
     return -1
 
