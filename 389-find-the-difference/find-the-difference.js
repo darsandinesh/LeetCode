@@ -5,15 +5,10 @@
  */
 var findTheDifference = function (s, t) {
 
-    const newS = s.split('');
-    for (let i = 0; i < t.length; i++) {
-        if (!newS.includes(t[i])) {
-            return t[i];
-        } else {
-            const index = newS.indexOf(t[i]);
-            newS.splice(index, 1);
-        }
-        console.log(newS)
+    let sortT = t.split('').sort();
+    let sortS = s.split('').sort();
+    for (let i = 0; i < sortT.length; i++) {
+        if (sortT[i] !== sortS[i]) return sortT[i]
     }
 
 };
