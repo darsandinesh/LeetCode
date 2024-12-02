@@ -5,6 +5,8 @@
  */
 var strStr = function(haystack, needle) {
 
-    return haystack.indexOf(needle)
+    if(haystack.includes(needle)){
+        return haystack.indexOf(needle)
+    }else return -1
     
 };
