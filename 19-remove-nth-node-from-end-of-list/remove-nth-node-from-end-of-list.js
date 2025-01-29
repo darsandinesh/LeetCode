@@ -12,28 +12,32 @@
  */
 var removeNthFromEnd = function (head, n) {
 
-   let length = 0;
-   let curr = head;
-   
-   while(curr){
-    curr = curr.next;
-    length++;
-   }
-
-   if(length == n){
-    return head.next;
-   }
-
-   let i=1;
-   let newCurr = head;
-
-   while(i<length-n){
-    newCurr = newCurr.next;
-    i++
-   }
-
-   newCurr.next = newCurr.next.next;
-
-   return head;
-
+    let curr = head;
+    let i = 1;
+    while (curr.next) {
+        i++;
+        curr = curr.next
+    }
+    let index = i - n
+    if (i == 1) {
+        return null
+    }
+    let j = 0;
+    let newCurr = head;
+    let prev = null
+    while (newCurr) {
+        if (j == index) {
+            console.log(newCurr)
+            if (newCurr == head) {
+                head = newCurr.next;
+            } else {
+                prev.next = newCurr.next;
+            }
+        } else {
+            prev = newCurr;
+        }
+        j++
+        newCurr = newCurr.next;
+    }
+    return head
 };
